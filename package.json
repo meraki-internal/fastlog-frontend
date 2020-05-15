@@ -1,8 +1,12 @@
 {
-  "name": "npm",
+  "name": "ajj-utils",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "main": "src/server.js",
+  "license": "ISC",
+  "description": "Iniciar Projeto Node.Js",
+  "author": {
+    "name": "André Souza"
+  },
   "scripts":{
     "dev:server": "nodemon src/server.js"
   },
@@ -13,5 +17,6 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
-  }
+  },
+  "keywords": ["Node.js"]
 }
