@@ -21,7 +21,7 @@ module.exports = {
     const user = await User.create(data);
     return res.status(200).json({
       messager: 'Registered successfully.',
-      code: '2_rs',
+      code: '2_rs', 
       user,
       token: generateToken({ id: user.id }),
     });
