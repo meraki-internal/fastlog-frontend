@@ -1,9 +1,8 @@
 const jwt = require('jsonwebtoken');
-const authConfig = require('../config/auth.json');
 
 module.exports = {
   generateToken(params = []) {
-    return jwt.sign(params, authConfig.secret, {
+    return jwt.sign(params, process.env.SECRET_KEY, {
       expiresIn: 86400,
     });
   },

@@ -9,7 +9,7 @@ route.post(
   '/',
   celebrate({
     [Segments.BODY]: Joi.object().keys({
-      nome: Joi.string().required(),
+      name: Joi.string().required(),
       email: Joi.string().required(),
       password: Joi.string().required(),
     }),

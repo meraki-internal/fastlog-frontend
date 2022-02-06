@@ -1,11 +1,18 @@
 const bcrypt = require('bcryptjs');
 const User = require('../models/User');
-
+const { errors} = require('celebrate');
 const { generateToken } = require('../utils/generateToken');
 
 module.exports = {
   async auth(req, res) {
     const { email, password } = req.body;
+
+    if(email === undefined){
+      errors({statusCode: 400, message:"Email não pode ser vazio."});
+    }
+        if(password === undefined){
+      errors({statusCode: 400, message:"Email não pode ser vazio."});
+    }
     const user = await User.findOne({ email }).select('+password');
     if (!user)
       return res
@@ -23,6 +30,7 @@ module.exports = {
       messager: 'Successfully authenticated.',
       code: '2_at',
       token: generateToken({ id: user.id }),
+      user: user
     });
   },
 };
