@@ -1,5 +1,5 @@
 import { compare, hash } from "bcryptjs";
-import { HashProviderProps } from "../Http/dtos/HashProvider/HashProviderProps";
+import { HashProviderProps } from "@dtos/HashProvider/HashProviderProps";
 
 class HashProvider implements HashProviderProps {
     public async generateHash(payload: string): Promise<string> {

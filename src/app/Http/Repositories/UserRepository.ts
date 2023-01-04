@@ -1,5 +1,5 @@
 import { PrismaClient, User } from "@prisma/client";
-import { CreateUserProps } from "../dtos/User/CreateUserProps";
+import { CreateUserProps } from "@dtos/User/CreateUserProps";
 
 const prisma = new PrismaClient()
 
@@ -28,9 +28,9 @@ class UserRepository {
 
         return user ? true : false
     }
-    public async findUserByEmail(email: string):Promise<User | null>{
+    public async findUserByEmail(email: string): Promise<User | null> {
         return await prisma.user.findFirst({
-            where:{
+            where: {
                 email
             }
         });

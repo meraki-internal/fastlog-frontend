@@ -1,6 +1,6 @@
-import UserRepository from "../Repositories/UserRepository";
 import { Request, Response, NextFunction } from 'express'
-import { HashProvider } from "../../Providers/HashProvider";
+import UserRepository from "@repositories/UserRepository";
+import { HashProvider } from "@providers/HashProvider";
 
 class UserController {
     public async store(request: Request, response: Response, next: NextFunction) {
@@ -33,14 +33,7 @@ class UserController {
                 createUser
             });
         } catch (err) {
-            const error = err as Error
-            console.log(error.message);
-
-            return response.status(500).json({
-                error: error.message,
-                status: false
-            });
-            //next(err);
+            next(err);
         }
     }
 }
