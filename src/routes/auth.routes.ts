@@ -1,8 +1,10 @@
 import { Router } from 'express';
-import sessionController from '../app/Http/controllers/SessionController';
+import sessionController from '@controllers/SessionController';
+import { MiddlewareCreateSession } from '@middlewares/routes/Session/CreateSession';
+
 const authRoutes = Router();
 
 authRoutes
-    .post('/', sessionController.createSession)
+  .post('/', MiddlewareCreateSession, sessionController.createSession)
 
 export { authRoutes };
