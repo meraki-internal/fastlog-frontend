@@ -33,14 +33,7 @@ class UserController {
                 createUser
             });
         } catch (err) {
-            const error = err as Error
-            console.log(error.message);
-
-            return response.status(500).json({
-                error: error.message,
-                status: false
-            });
-            //next(err);
+            next(err);
         }
     }
 }

@@ -28,9 +28,9 @@ class UserRepository {
 
         return user ? true : false
     }
-    public async findUserByEmail(email: string):Promise<User | null>{
+    public async findUserByEmail(email: string): Promise<User | null> {
         return await prisma.user.findFirst({
-            where:{
+            where: {
                 email
             }
         });

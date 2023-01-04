@@ -8,18 +8,20 @@ class SessionRepository {
     }: RequestCreateSessionProps): Promise<ResponseCreateSessionProps> {
         const { expiresIn, secret } = ConfigAuthenticate.jwt
         const id = String(user.id) as string;
+        
         const token = sign({}, secret, {
             subject: id,
             expiresIn
         });
+
         const newUser = {
             id: user.id,
             name: user.name,
-            email: user.email,            
+            email: user.email,
             forgoutPasswordToken: user.forgoutPasswordToken,
             forgoutPasswordDate: user.forgoutPasswordDate,
         }
-        return { user: newUser, token }
+        return { user: newUser, token };
     }
 }
 
