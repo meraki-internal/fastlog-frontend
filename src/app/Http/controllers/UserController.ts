@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from 'express'
 import UserRepository from "@repositories/UserRepository";
 import { HashProvider } from "@providers/HashProvider";
+import { Exception } from '@exceptions/Exception';
 
 class UserController {
     public async store(request: Request, response: Response, next: NextFunction) {
@@ -13,7 +14,7 @@ class UserController {
             const checkIfUserEmailIsInUse = await userRepository.findUserByEmail(email);
 
             if (checkIfUserEmailIsInUse) {
-                throw new Error("O email informado já está cadastrado.");
+                throw new Exception("O email informado já está cadastrado.");
             }
 
             const hashProvider = new HashProvider();

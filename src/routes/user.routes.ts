@@ -1,11 +1,12 @@
 
-import userController from "../app/Http/controllers/UserController";
+import { MiddlewareCreateUser } from "@middlewares/routes/User/CreateUser";
+import userController from "@controllers/UserController";
 
 const { Router } = require('express');
 
 const userRoutes = Router();
 
 userRoutes
-    .post("/", userController.store);
+  .post("/", MiddlewareCreateUser, userController.store);
 
 export { userRoutes };

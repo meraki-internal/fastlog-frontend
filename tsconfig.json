@@ -26,7 +26,7 @@
             "@repositories/*": ["./src/app/Http/Repositories/*"],
             "@providers/*":["./src/app/Providers/*"],
             "@exceptions/*": ["./src/app/Exceptions/*"],
-            "@middlewares": ["./src/app/Http/middlewares/*"],
+            "@middlewares/*": ["./src/app/Http/middlewares/*"],
             "@dtos/*": ["./src/app/Http/dtos/*"]
         }
     },
