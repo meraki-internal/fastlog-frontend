@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
-import { HashProvider } from "../../Providers/HashProvider";
-import { SessionRepository } from "../Repositories/SessionRepository";
-import UserRepository from "../Repositories/UserRepository";
+import { HashProvider } from "@providers/HashProvider";
+import { SessionRepository } from "@repositories/SessionRepository";
+import UserRepository from "@repositories/UserRepository";
 
 
 class AuthController {

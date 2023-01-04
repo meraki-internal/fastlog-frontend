@@ -1,6 +1,6 @@
 import { sign } from "jsonwebtoken";
-import ConfigAuthenticate from "../../Providers/ConfigAuthenticate";
-import { RequestCreateSessionProps, ResponseCreateSessionProps } from "../dtos/Session/CreateSessionProps";
+import ConfigAuthenticate from "@providers/ConfigAuthenticate";
+import { RequestCreateSessionProps, ResponseCreateSessionProps } from "@dtos/Session/CreateSessionProps";
 
 class SessionRepository {
     public async createSession({

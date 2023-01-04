@@ -1,6 +1,6 @@
-import UserRepository from "../Repositories/UserRepository";
 import { Request, Response, NextFunction } from 'express'
-import { HashProvider } from "../../Providers/HashProvider";
+import UserRepository from "@repositories/UserRepository";
+import { HashProvider } from "@providers/HashProvider";
 
 class UserController {
     public async store(request: Request, response: Response, next: NextFunction) {

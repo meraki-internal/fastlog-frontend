@@ -1,5 +1,5 @@
 import { PrismaClient, User } from "@prisma/client";
-import { CreateUserProps } from "../dtos/User/CreateUserProps";
+import { CreateUserProps } from "@dtos/User/CreateUserProps";
 
 const prisma = new PrismaClient()
 
