@@ -13,4 +13,5 @@ Faço uso desse repositório sempre que preciso iniciar um novo projeto.
 # 1.1.0
 - [x] Prisma
 - [x] Joi
-- [x] JWTcmd
+- [x] JWT
+- [ ] Implementar template de email
