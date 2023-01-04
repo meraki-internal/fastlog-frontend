@@ -29,5 +29,6 @@
             "@middlewares": ["./src/app/Http/middlewares/*"],
             "@dtos/*": ["./src/app/Http/dtos/*"]
         }
-    }
+    },
+    "include": ["src/**/*"]
 }
