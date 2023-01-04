@@ -6,12 +6,12 @@ Faço uso desse repositório sempre que preciso iniciar um novo projeto.
 
 # 1.0.0
 
-- Celebrate
-- Mongoose
-- JWT
+- [x] Celebrate
+- [x] Mongoose
+- [x] JWT
 
 # 1.1.0
-- Prisma
+- [x] Prisma
 - Joi
-- JWT
+- [x] JWT
 - Basic Auth
