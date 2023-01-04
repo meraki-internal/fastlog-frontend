@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import { HashProvider } from "@providers/HashProvider";
 import { SessionRepository } from "@repositories/SessionRepository";
 import UserRepository from "@repositories/UserRepository";
+import { Exception } from "@exceptions/Exception";
 
 
 class AuthController {
@@ -14,20 +15,19 @@ class AuthController {
 
             const user = await userRepository.findUserByEmail(email);
             if (!user) {
-                throw new Error("Email ou senha inválidos");
+                throw new Exception("Email ou senha inválidos", 401);
             }
 
             const matchPassword = await hashProvider.compareHash(password, user.password);
 
             if (!matchPassword) {
-                throw new Error("Email ou senha inválidos");
+                throw new Exception("Email ou senha inválidos", 401);
             }
 
 
             const session = await sessionRepository.createSession({ user });
             return response.status(200).json(session)
         } catch (err) {
-            console.log(err);
             next(err);
         }
     }
