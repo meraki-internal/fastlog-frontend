@@ -1,0 +1,11 @@
+{
+  "name": "Mensagem Teste 2",
+  "description": "Teste",
+  "channel": "teste2",
+  "icon": "🚀",
+  "notify": true,
+  "message": "[Link](https://google.com)",
+  "tags": {
+    "teste": "teste"
+  }
+}

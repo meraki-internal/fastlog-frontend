@@ -1,6 +1,9 @@
 import { Request, Response, Router } from 'express';
 import { userRoutes } from './user.routes'
 import { authRoutes } from './auth.routes'
+import { projectRoutes } from './projects.routes';
+import { messageRoutes } from './message.routes';
+import { channelsRoutes } from "@routes/channels.routes";
 const route = Router();
 
 route.get('/', (
@@ -20,7 +23,10 @@ route.get('/', (
 });
 
 route
-    .use("/user", userRoutes)
-    .use("/session", authRoutes);
+  .use("/user", userRoutes)
+  .use("/session", authRoutes)
+  .use("/messages", messageRoutes)
+  .use("/channels", channelsRoutes)
+  .use("/projects", projectRoutes);
 
 export { route };

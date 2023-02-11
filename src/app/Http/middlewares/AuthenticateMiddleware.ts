@@ -21,8 +21,7 @@ export function AuthenticateMiddleware(request: Request, response: Response, nex
 
     jwt.verify(token, process.env.SECRET_KEY, function (err: any, decoded: any) {
         if (err) return response.status(401).json({ messager: 'Token invalido' });
-
-        request.userId = decoded.id;
+        request.userId = decoded.sub;
         return next();
     });
 };

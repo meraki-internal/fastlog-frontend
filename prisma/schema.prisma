@@ -23,3 +23,47 @@ model User {
 
   @@map("user")
 }
+
+model Project {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  hash      String
+  userId    String    @db.ObjectId
+  default   Boolean   @default(false)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime?
+  deletedAt DateTime?
+
+  @@map("project")
+}
+
+model Channel {
+  id        String       @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  type      TypesChannel @default(REST)
+  projectId String       @db.ObjectId
+  userId    String       @db.ObjectId
+  active    Boolean      @default(true)
+  default   Boolean      @default(false)
+  createdAt DateTime     @default(now())
+  updateAt  DateTime?
+  deletedAt DateTime?
+
+  @@map("channel")
+}
+
+model Message {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  description String
+  channelID   String @db.ObjectId
+  icon        String
+  message     String
+  projectID   String @db.ObjectId
+
+  @@map("message")
+}
+
+enum TypesChannel {
+  REST
+}

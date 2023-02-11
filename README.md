@@ -1,17 +1,9 @@
-# Uso
+# Tarefas pendentes
 
-Faço uso desse repositório sempre que preciso iniciar um novo projeto.
-
-
-
-# 1.0.0
-
-- [x] Celebrate
-- [x] Mongoose
-- [x] JWT
-
-# 1.1.0
-- [x] Prisma
-- [x] Joi
-- [x] JWT
-- [ ] Implementar template de email
+- [ ] Criar um canal
+- [ ] Listar os canais
+- [ ] Listar mensagens de um único canal
+- [ ] Quando criar um projeto, criar um canal default
+  - [ ] Se for o canal default não poderá ser excluído do projeto
+- [ ] Enviar uma mensagem para o canal
+- [ ] Listar todas as mensagens do projeto
